@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Personagens dos Simpsons</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Nunito:wght@400;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="hero">
+    <div class="hero__clouds" aria-hidden="true"></div>
+    <h1 class="hero__title">Os Simpsons</h1>
+    <p class="hero__subtitle">
+      Conheça os moradores de Springfield! Os dados abaixo chegam em tempo real
+      da <strong>API dos Simpsons</strong>.
+    </p>
+  </header>
+
+  <main class="container">
+
+    <section class="toolbar" aria-label="Filtros">
+      <label class="field">
+        <span class="field__label">Buscar personagem</span>
+        <input type="search" id="busca" placeholder="Ex.: Homer, Moe, Lisa..." autocomplete="off">
+      </label>
+
+      <label class="field">
+        <span class="field__label">Status</span>
+        <select id="filtro-status">
+          <option value="">Todos</option>
+        </select>
+      </label>
+
+      <button type="button" id="btn-favoritos" class="btn btn--toggle" aria-pressed="false">
+        <span class="btn__heart">♥</span> Só favoritos
+      </button>
+    </section>
+
+    <p id="contador" class="contador" aria-live="polite"></p>
+
+    <!-- Os cards são inseridos aqui via JavaScript -->
+    <section id="cards" class="cards" aria-label="Lista de personagens"></section>
+
+    <div id="mensagem" class="mensagem" role="status"></div>
+
+    <div class="load-more">
+      <button type="button" id="btn-mais" class="btn" hidden>Carregar mais</button>
+    </div>
+
+  </main>
+
+  <footer class="footer">
+    <p>Projeto acadêmico · HTML, CSS e JavaScript puros · Dados:
+      <a href="https://apisimpsons.fly.dev/" target="_blank" rel="noopener">apisimpsons.fly.dev</a>
+    </p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
